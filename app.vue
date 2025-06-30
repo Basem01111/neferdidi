@@ -11,13 +11,6 @@
 
     <!-- Phone Btns -->
     <UiPhoneBtns />
-
-    <!-- Welcome Modal -->
-       <!-- <Teleport to="body">
-        <UiModal :style-modal="2" :show-modal="showModal" @close="showModal = false">
-          <UiBoxWelcome/>
-        </UiModal>
-      </Teleport> -->
   </div>
 </template>
 
@@ -28,5 +21,4 @@ useSeoMeta({
   ogTitle: 'Neferdidi',
   ogDescription: 'Neferdidi',
 })
-// const showModal = ref(true);
 </script>
