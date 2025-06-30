@@ -24,6 +24,7 @@
       :btn="{
         text: '申请加盟',
         link: '/',
+        notLink: true
       }"
     />
 
