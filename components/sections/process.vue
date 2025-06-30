@@ -1,4 +1,4 @@
-<!-- layouts/default.vue -->
+
 <template>
   <div class="bg-white pt-[25vw] md:pt-[150px] pb-[10vh] md:pb-[200px]">
     <!-- Title -->

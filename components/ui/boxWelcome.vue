@@ -7,6 +7,7 @@
          <h3 class=" text-[var(--main-color)] text-center mb-0 text-[4.27vw] md:text-[26px] font-semibold ">
             加盟声明
         </h3>
+        
         <!-- Text -->
         <p class="mb-0 md:mt-[17px] md:px-[38px] font-normal text-[3.2vw] md:text-[14px] leading-[4.8vw] md:leading-[unset] text-start pt-[3.6vw] border-[0.13px]a border-[rgba(0,0,0,0)]">
             
@@ -20,7 +21,6 @@
             <br>
             3.为防止不法分子假冒“古茗”品牌，发布虚假招商信息、借机推销其他品牌，获取不当利益，特请各位意向加盟伙伴认准「古茗」官方认证渠道。其他打着古茗名义或添加前后缀的品牌均与我司无关。请大家提高警惕，避免上当受骗！
             <br>
-
         </p>
     </div>
 </template>

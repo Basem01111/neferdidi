@@ -1,4 +1,4 @@
-<!-- layouts/default.vue -->
+
 <template>
   <div class="relative bg-white">
     <!-- bg -->
@@ -61,7 +61,7 @@
 useSeoMeta({
   title: 'Investors',
 })
-// Data
+// Data Nav
 const dataNav = [
   "公司治理",
   "招股文件",
@@ -70,6 +70,7 @@ const dataNav = [
   "投资者联络",
   "投资者日历",
 ];
+// Data Side
 const dataSide = [
   [
     {
@@ -229,6 +230,7 @@ const dataSide = [
   ],
 ];
 
+// Active Index nav
 const activeNav = ref(0);
 </script>
 

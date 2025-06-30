@@ -1,4 +1,4 @@
-<!-- layouts/default.vue -->
+
 <template>
   <div class="pt-[25vw] md:pt-[150px] md:pb-[200px]">
     <!-- Title -->

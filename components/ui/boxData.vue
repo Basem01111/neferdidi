@@ -105,6 +105,7 @@
 </template>
 
 <script setup>
+// props
 defineProps({
   styleBox: {
     type: String,
@@ -131,6 +132,8 @@ defineProps({
     default: () => {},
   },
 });
+
+// Show Modal
 const showModal = ref(false);
 </script>
 

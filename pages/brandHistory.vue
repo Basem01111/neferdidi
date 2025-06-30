@@ -1,4 +1,4 @@
-<!-- layouts/default.vue -->
+
 <template>
   <div class="bg-white">
     <!-- Bg -->
