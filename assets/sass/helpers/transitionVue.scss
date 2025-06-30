@@ -1,0 +1,15 @@
+// zoom-fade
+.zoom-fade-enter-active,
+.zoom-fade-leave-active {
+  transition: all 0.4s ease;
+}
+.zoom-fade-enter-from,
+.zoom-fade-leave-to {
+  opacity: 0;
+  transform: scale(0);
+}
+.zoom-fade-enter-to,
+.zoom-fade-leave-from {
+  opacity: 1;
+  transform: scale(1);
+}

@@ -1,0 +1,32 @@
+// Variables
+@use './variables/colors.scss' as *;
+
+// Helpers
+@use './helpers/transitionVue.scss' as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Normalize
+body,
+html {
+    margin: 0;
+    padding: 0;
+
+    ul,
+    ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    a {
+        color: var(--main-color-text);
+        text-decoration: none;
+    }
+}
+
+html {
+    background-color: var(--main-color-bg);
+}
