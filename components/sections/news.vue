@@ -1,24 +1,24 @@
 <template>
   <div
-    class="bg-[var(--main-color-bg-2)] relative pt-[50px] md:p-[315px_0_0] bottom-[-120px]"
+    class="bg-[var(--main-color-bg-2)] relative py-[40px] md:py-[80px]"
   >
+  <UiContainer>
     <!-- Title -->
-    <TitlesTitleAndDesc>
-      <template #title> 龙井系列 </template>
-      <div class="hidden md:block">
-        正宗龙井香，时令浙茶韵
-      </div>
+    <TitlesTitleAndDesc class="!mb-4 md:!mb-[35px]" class-title="!mb-1 md:!mb-[14px]">
+      <template #title> أشهر المنتجات </template>
+        منتجاتنا المختارة لك
     </TitlesTitleAndDesc>
 
     <!-- Large Screen -->
-    <div class="hidden md:block relative">
+    <div class="relative">
       <!-- Silder -->
       <ClientOnly>
         <swiper-container
         ref="containerRef"
-        class="!m-0 !max-w-full !w-full !p-[0_120px_0]"
+        class="!m-0 !max-w-full !w-full !p-[0_8.5%_0] md:!p-[0_4%_0]"
         :grab-cursor="true" 
         :loop="true"
+          dir="rtl"
         :pagination="true"
         >
           <swiper-slide
@@ -32,28 +32,21 @@
         </swiper-container>
 
         <!-- Btns -->
-           <button type="button" class="z-2 absolute top-1/2 -translate-y-1/2 end-[24px] cursor-pointer" @click="slideNext()">
-            <NuxtImg src="/images/global/arrow-right.png" alt="Arrow" class="h-auto" width="52px" />
+           <button type="button" class="z-2 absolute top-1/2 -translate-y-1/2 end-[0] cursor-pointer" @click="slideNext()">
+            <Icon icon="ei:arrow-left" class="w-[35px] md:w-[55px] h-[35px] md:h-[55px]" />
            </button>
-           <button type="button" class="z-2 absolute top-1/2 -translate-y-1/2 start-[24px] cursor-pointer" @click="slidPrev()">
-            <NuxtImg src="/images/global/arrow-left.png" alt="Arrow" class="h-auto" width="52px" />
+           <button type="button" class="z-2 absolute top-1/2 -translate-y-1/2 start-[0] cursor-pointer" @click="slidPrev()">
+            <Icon icon="ei:arrow-right" class="w-[35px] md:w-[55px] h-[35px] md:h-[55px]" />
            </button>
       </ClientOnly>
     </div>
-
-    <!-- Small Screen -->
-    <div class="flex flex-col gap-[54px] md:hidden pt-[19px]">
-      <div v-for="(sldie,i) in slides" :key="i">
-        <NuxtImg :src="sldie.slide" alt="Slide" class="w-[89.33vw] h-[47.33vw] block mx-auto" />
-        <h3 class="mb-0 mt-[5.33vw] text-center text-[var(--main-color-text)] text-[3.47vw] font-medium">{{ sldie.title }}</h3>
-        <p class="mb-0 p-[2vw_5.33vw_0_5.33vw] text-[var(--main-color-text-2)] text-center font-medium">{{ sldie.desc }}</p>
-      </div>
-    </div>
+  </UiContainer>
   </div>
 </template>
 
 <script lang="ts" setup>
 import type { Swiper } from "swiper";
+import { Icon } from "@iconify/vue";
 
 // Slides
 const slides = reactive([
@@ -124,7 +117,7 @@ function slidPrev() {
     position: absolute;
     bottom: -2px;
     left: 0%;
-    width: 175px;
+    width: 20%;
     height: auto;
     height: auto;
     opacity: 0;

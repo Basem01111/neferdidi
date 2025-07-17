@@ -1,8 +1,8 @@
 <template>
-  <div class="text-center mb-[46px]">
+  <div class="text-center mb-[35px]">
     <h3
       :class="[
-        'text-[var(--main-color-text)] tracking-widest md:tracking-[unset] text-[5.33vw] md:text-[40px] font-semibold mb-[4vw] md:mb-[14px]',
+        'text-[var(--main-color-text)] tracking-widest md:tracking-[unset] text-[5.33vw] md:text-[40px] font-semibold mb-[14px]',
         classTitle
       ]"
     >

@@ -1,44 +1,20 @@
 
 <template>
-  <div class="pt-[25vw] md:pt-[150px] md:pb-[200px]">
+  <UiContainer class="py-[40px] md:py-[80px]">
     <!-- Title -->
-    <TitlesTitleAndDesc class="!mb-[25px]" class-title="!mb-0">
-      <template #title> 合作费用 </template>
-      Franchise Fee
+    <TitlesTitleAndDesc class-title="!mb-0">
+      <template #title> رسوم الأمتياز </template>
     </TitlesTitleAndDesc>
 
     <!-- Content -->
-    <div class="w-[89.2vw] md:max-w-[1261px] mx-auto">
-      <!-- Header Card -->
       <div
-        class="text-[#f9f9f6] rounded-[4vw_4vw_0_0] md:rounded-[30px_30px_0_0] bg-[var(--main-color)] p-[8.9vw_5vw_8.9vw] md:p-[40px_30px] md:m-[80px_auto_0]"
-      >
-        <div>
-          <span
-            class="text-[4vw] md:text-[18px] font-[500] md:font-[unset] tracking-widest md:tracking-[unset]"
-            >首年启动资金</span
-          >
-          <span
-            class="text-[4.8vw] md:text-[24px] font-bold md:font-[unset] tracking-widest md:tracking-[unset] ms-[1vw] md:ms-[10px]"
-            >￥233000起</span
-          >
-        </div>
-        <div
-          class="font-normal md:font-[unset] text-[3.47vw] md:text-[14px] mt-4 md:mt-[6px]"
-        >
-          不包含店面租金、转让费、加盟费、咖啡机设备款和大型设备分期部分款项
-        </div>
-      </div>
-
-      <!-- Content Card -->
-      <div
-        class="rounded-[0_0_4vw_4vw] md:rounded-[0_0_30px_30px] md:grid md:grid-cols-[1fr_1fr_1fr] md:gap-[2px]"
+        class="grid grid-cols-[1fr] md:grid-cols-[1fr_1fr_1fr] gap-4 md:gap-[20px]"
       >
         <!-- Items -->
         <div
           v-for="(item, i) in data"
           :key="i"
-          class="p-[6.6vw_5vw_8vw] md:p-[50px_30px] md:flex md:flex-col md:justify-center bg-[var(--main-color-bg-2)] border-t-[0.01vw] border-t-[var(--main-color)] md:border-t-0"
+          class="p-4 md:p-[30px_20px] md:flex md:flex-col md:justify-center bg-[var(--main-color-bg-2)] rounded-2xl shadow-2xs"
         >
           <!-- Info -->
           <div class="flex items-center justify-center md:justify-start">
@@ -72,103 +48,83 @@
           </p>
         </div>
       </div>
-    </div>
 
     <!-- Footer Section -->
-     <div class="w-[89.2vw] md:max-w-[1261px] mx-auto">
        <div
-         class="text-[4vw] md:text-[18px] font-semibold md:font-medium tracking-widest p-[11.5vw_0_0] md:pt-[50px] text-[var(--main-color)]"
+         class="text-[16px] font-medium tracking-widest pt-[20px] md:pt-[30px] pb-[7px] md:pb-[6px]  text-[var(--main-color)]"
        >
-         新加盟商帮扶政策的说明：
+         شرح سياسة دعم الشركاء الجدد المنضمين حديثًا:
        </div>
        <div
-         class="text-[3.47vw] md:text-[14px] font-normal leading-[5.33vw] p-[3vw_0_20vw] md:pt-[16px] md:pb-[0] leading-[3vw 5.33vw 20vw] md:leading-[1.5] text-[var(--main-color-text-2)]"
+         class="text-[14px] flex flex-col gap-2 font-normal leading-[5.33vw] leading-[3vw 5.33vw 20vw] md:leading-[1.5] text-[var(--main-color-text-2)]"
        >
-         1、￥98800加盟费可分期支付。
-         <br />
-         <p class="jsx-977581186">
-           2、公司秉持着“同担共享”的理念与初心，您可以在<span class="text-[var(--main-color)]">签约首年无需缴纳任何加盟费</span>，次年开始支付部分加盟费(分别在签约后第13个月支付2.5万，签约后第19个月支付4.88万)，第三年(签约后第25个月)再支付2.5万。资金力更小，风险公司共担。
+         <p class="m-0">
+          1.رسوم الانضمام البالغة 98,800 يوان يمكن دفعها بالتقسيط.
+         </p>
+         <p class="m-0">
+           2.تلتزم الشركة بمبدأ "تحمّل المسؤولية والمشاركة في المنافع معًا"، ويمكنك من خلال ذلك <span class="text-[var(--main-color)]"> في السنة الأولى من التعاقد، لا يُطلب منك دفع أي رسوم انضمام </span> ابتداءً من السنة الثانية، تبدأ بدفع جزء من رسوم الانضمام (25,000 يوان في الشهر الثالث عشر من التعاقد، و48,800 يوان في الشهر التاسع عشر)، ثم تدفع 25,000 يوان أخرى في السنة الثالثة (الشهر الخامس والعشرون من التعاقد). وبهذا تكون الحاجة إلى رأس مال أقل، وتتحمّل الشركة جزءًا من المخاطر معك.
          </p>
        </div>
-     </div>
-  </div>
+  </UiContainer>
 </template>
 
 <script lang="ts" setup>
 // Data
 
 const data = [
-  {
-    title: "品牌合作费",
+    {
+    title: "الرسوم",
     price: "￥18800",
-    text: "三年单店授权/新品更新/品牌活动策划",
-    notes: ["首年0费用", "分期支付"],
+    text: "ترخيص لمتجر واحد لمدة ثلاث سنوات / تحديثات للمنتجات الجديدة / تخطيط لأنشطة العلامة التجارية",
+    notes: ["السنة الأولى بدون رسوم", "دفع على أقساط"],
   },
-  {
-    title: "品牌合作费",
+    {
+    title: "الرسوم",
     price: "￥18800",
-    text: "三年单店授权/新品更新/品牌活动策划",
-    notes: ["首年0费用", "分期支付"],
+    text: "ترخيص لمتجر واحد لمدة ثلاث سنوات / تحديثات للمنتجات الجديدة / تخطيط لأنشطة العلامة التجارية",
+    notes: ["السنة الأولى بدون رسوم", "دفع على أقساط"],
   },
-  {
-    title: "品牌合作费",
+    {
+    title: "الرسوم",
     price: "￥18800",
-    text: "三年单店授权/新品更新/品牌活动策划",
-    notes: ["首年0费用", "分期支付"],
+    text: "ترخيص لمتجر واحد لمدة ثلاث سنوات / تحديثات للمنتجات الجديدة / تخطيط لأنشطة العلامة التجارية",
+    notes: ["السنة الأولى بدون رسوم", "دفع على أقساط"],
   },
-  {
-    title: "品牌合作费",
+    {
+    title: "الرسوم",
     price: "￥18800",
-    text: "三年单店授权/新品更新/品牌活动策划",
-    notes: ["首年0费用", "分期支付"],
+    text: "ترخيص لمتجر واحد لمدة ثلاث سنوات / تحديثات للمنتجات الجديدة / تخطيط لأنشطة العلامة التجارية",
+    notes: ["السنة الأولى بدون رسوم", "دفع على أقساط"],
   },
-  {
-    title: "品牌合作费",
+    {
+    title: "الرسوم",
     price: "￥18800",
-    text: "三年单店授权/新品更新/品牌活动策划",
-    notes: ["首年0费用", "分期支付"],
+    text: "ترخيص لمتجر واحد لمدة ثلاث سنوات / تحديثات للمنتجات الجديدة / تخطيط لأنشطة العلامة التجارية",
+    notes: ["السنة الأولى بدون رسوم", "دفع على أقساط"],
   },
-  {
-    title: "品牌合作费",
+    {
+    title: "الرسوم",
     price: "￥18800",
-    text: "三年单店授权/新品更新/品牌活动策划",
-    notes: ["首年0费用", "分期支付"],
+    text: "ترخيص لمتجر واحد لمدة ثلاث سنوات / تحديثات للمنتجات الجديدة / تخطيط لأنشطة العلامة التجارية",
+    notes: ["السنة الأولى بدون رسوم", "دفع على أقساط"],
   },
-  {
-    title: "品牌合作费",
+    {
+    title: "الرسوم",
     price: "￥18800",
-    text: "三年单店授权/新品更新/品牌活动策划",
-    notes: ["首年0费用", "分期支付"],
+    text: "ترخيص لمتجر واحد لمدة ثلاث سنوات / تحديثات للمنتجات الجديدة / تخطيط لأنشطة العلامة التجارية",
+    notes: ["السنة الأولى بدون رسوم", "دفع على أقساط"],
   },
-  {
-    title: "品牌合作费",
+    {
+    title: "الرسوم",
     price: "￥18800",
-    text: "三年单店授权/新品更新/品牌活动策划",
-    notes: ["首年0费用", "分期支付"],
+    text: "ترخيص لمتجر واحد لمدة ثلاث سنوات / تحديثات للمنتجات الجديدة / تخطيط لأنشطة العلامة التجارية",
+    notes: ["السنة الأولى بدون رسوم", "دفع على أقساط"],
   },
-  {
-    title: "品牌合作费",
+    {
+    title: "الرسوم",
     price: "￥18800",
-    text: "三年单店授权/新品更新/品牌活动策划",
-    notes: ["首年0费用", "分期支付"],
-  },
-  {
-    title: "品牌合作费",
-    price: "￥18800",
-    text: "三年单店授权/新品更新/品牌活动策划",
-    notes: ["首年0费用", "分期支付"],
-  },
-  {
-    title: "品牌合作费",
-    price: "￥18800",
-    text: "三年单店授权/新品更新/品牌活动策划",
-    notes: ["首年0费用", "分期支付"],
-  },
-  {
-    title: "品牌合作费",
-    price: "￥18800",
-    text: "三年单店授权/新品更新/品牌活动策划",
-    notes: ["首年0费用", "分期支付"],
+    text: "ترخيص لمتجر واحد لمدة ثلاث سنوات / تحديثات للمنتجات الجديدة / تخطيط لأنشطة العلامة التجارية",
+    notes: ["السنة الأولى بدون رسوم", "دفع على أقساط"],
   },
 ];
 </script>

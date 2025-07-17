@@ -1,38 +1,36 @@
 <template>
-  <div class="bg-[var(--main-color-bg)] relative pt-[18vw] md:pt-[180px]">
+  <div class="bg-white relative pt-[40px] md:pt-[80px]">
     <!-- box Data -->
-    <UiBoxData
-      class="z-10 relative bottom-[-4vw] md:bottom-[unset] md:translate-y-[10%]"
-      style-box="2"
-      title="全国门店"
-      content="截至2024年9月30日，古茗茶饮已在全国开设超9700家加盟门店，覆盖浙江、福建、江西、湖南、广东、湖北、重庆、四川等17省、200+个城市。更多区域拓展正在稳步进行，敬请期待……"
-      :data="[
-        {
-          title: '9700+家',
-          text: ['加盟门店'],
-        },
-        {
-          title: '17省',
-          text: ['覆盖省份'],
-        },
-        {
-          title: '200+个',
-          text: ['分布城市'],
-        },
-      ]"
-      img="/images/landing/iconBranches.gif"
-      :btn="{
-        text: '申请加盟',
-        link: '/',
-        notLink: true
-      }"
-    />
+    <UiContainer>
+      <UiBoxData
+        class="mb-[40px] md:mb-[80px]"
+        style-box="2"
+        title="فروعنا"
+        content='حتى تاريخ 30 سبتمبر 2024، افتتحت علامة "قو مينغ" لشاي المشروبات أكثر من 9700 فرع بنظام الامتياز في أنحاء الصين، تغطي 17 مقاطعة منها تشجيانغ، فوجيان، جيانغشي، هونان، قوانغدونغ، هوبي، تشونغتشينغ، سيتشوان، وأكثر من 200 مدينة. ويتم التوسع إلى مناطق جديدة بخطى ثابتة... ترقّبوا المزيد.'
+        :data="[
+          {
+            title: '+9700',
+            text: ['فروع امتياز'],
+          },
+          {
+            title: '17 مقاطعة',
+            text: ['المناطق المشمولة'],
+          },
+          {
+            title: '+200 مدينة',
+            text: ['المدن المنتشرة'],
+          },
+        ]"
+      />
+    </UiContainer>
 
     <!-- Silder -->
-    <ClientOnly>
+   <div class=" relative">
+     <ClientOnly>
       <swiper-container
         ref="containerRef"
         class="!m-0 !w-full"
+        dir="rtl"
         :grab-cursor="true"
         :loop="true"
         :pagination="true"
@@ -45,32 +43,48 @@
           <NuxtImg
             :src="slide"
             alt="Slide"
-            class="w-full block mx-auto h-[240px] md:h-auto"
+            class="w-full h-[240px] md:h-[calc(100vh-81.2px)] object-cover block"
           />
         </swiper-slide>
       </swiper-container>
 
       <!-- Btns -->
-      <button type="button" class="z-2 absolute bottom-[33px] end-[24px] cursor-pointer" @click="slideNext()">
-            <NuxtImg src="/images/global/arrow-right.png" alt="Arrow" class="h-auto invert hidden md:block" width="52px" />
-           </button>
-           <button type="button" class="z-2 absolute bottom-[33px] start-[24px] cursor-pointer" @click="slidPrev()">
-            <NuxtImg src="/images/global/arrow-left.png" alt="Arrow" class="h-auto invert hidden md:block" width="52px" />
-           </button>
+      <button
+        type="button"
+        class="z-2 absolute top-1/2 -translate-y-1/2 end-[24px] cursor-pointer"
+        @click="slideNext()"
+      >
+        <Icon
+          icon="ei:arrow-left"
+          class="w-[35px] md:w-[55px] h-[35px] md:h-[55px] text-white"
+        />
+      </button>
+      <button
+        type="button"
+        class="z-2 absolute top-1/2 -translate-y-1/2 start-[24px] cursor-pointer"
+        @click="slidPrev()"
+      >
+        <Icon
+          icon="ei:arrow-right"
+          class="w-[35px] md:w-[55px] h-[35px] md:h-[55px] text-white"
+        />
+      </button>
     </ClientOnly>
+   </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { Icon } from "@iconify/vue";
 import type { Swiper } from "swiper";
 
 // Slides
 const slides = reactive([
-    "/images/landing/bransh1.jpg",
-    "/images/landing/bransh2.jpg",
-    "/images/landing/bransh3.jpg",
-    "/images/landing/bransh4.jpg",
-    "/images/landing/bransh5.jpg",
+  "/images/landing/bransh1.jpg",
+  "/images/landing/bransh2.jpg",
+  "/images/landing/bransh3.jpg",
+  "/images/landing/bransh4.jpg",
+  "/images/landing/bransh5.jpg",
 ]);
 
 const containerRef = ref<{ swiper?: Swiper } | null>(null);
@@ -125,7 +139,8 @@ swiper-container {
     background-color: white;
   }
 }
-.swiper-button-next, .swiper-rtl .swiper-button-prev {
-    right: calc(-120px - 24px) !important;
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: calc(-120px - 24px) !important;
 }
 </style>

@@ -1,24 +1,24 @@
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    <!-- Loader -->
-    <UiLoader />
-
     <!-- Content -->
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-
-    <!-- Phone Btns -->
-    <UiPhoneBtns />
   </div>
 </template>
 
 <script type="ts" setup>
+useHead({
+  htmlAttrs: {
+    lang: 'ar',
+    dir: 'rtl',
+  }
+});
+
 useSeoMeta({
-  title: 'Neferdidi',
-  description: 'Neferdidi',
+  title: 'الرائيسية',
+  description: 'اكتشف سحر المشروبات الصينية الأصيلة من الشاي الفاخر إلى البوبا',
   ogTitle: 'Neferdidi',
-  ogDescription: 'Neferdidi',
+  ogDescription: 'اكتشف سحر المشروبات الصينية الأصيلة من الشاي الفاخر إلى البوبا',
 })
 </script>

@@ -4,11 +4,12 @@
     <!-- Hero Section -->
     <SectionsHero/>
     
+    <!-- News Section -->
+     <SectionsNews/>
+    
     <!-- Steps Section -->
      <SectionsSteps />
     
-    <!-- News Section -->
-     <SectionsNews/>
     
     <!-- Branches Section -->
      <SectionsBranches/>

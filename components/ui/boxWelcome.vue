@@ -1,7 +1,7 @@
 <template>
     <div class="p-[6.8vw_3.73vw_6.67vw] md:p-[0_60px_30px] relative">
         <!-- Logo -->
-        <NuxtImg src="//images//global//logo.png" class="absolute md:static block w-[7.78vw] md:w-auto h-[3.63vw] md:-[26px] right-[4vw] md:right-[unset] top-[4vw] md:top-[unset] md:m-[36px_auto_11px]"/>
+        <NuxtImg src="//images//global//logo.webp" class="absolute md:static block w-[7.78vw] md:w-auto h-[3.63vw] md:-[26px] right-[4vw] md:right-[unset] top-[4vw] md:top-[unset] md:m-[36px_auto_11px]"/>
         
         <!-- Title -->
          <h3 class=" text-[var(--main-color)] text-center mb-0 text-[4.27vw] md:text-[26px] font-semibold ">
