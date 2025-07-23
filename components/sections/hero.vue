@@ -1,70 +1,52 @@
 <template>
   <div class="relative mb-[40px] md:mb-[80px]">
-    <div class="bg-white overflow-hidden pb-[125px]">
+    <div class="bg-white overflow-hidden pb-[80px] relative">
+      <NuxtImg
+        src="/images/landing/neferdidi_hero_section.png"
+        class="absolute inset-0 w-screen h-screen object-cover [filter:brightness(0.8)]"
+      />
       <UiContainer
-        class="min-h-[calc(100vh-61.2px)] md:min-h-[calc(100vh-81.2px)] relative flex justify-center md:justify-between items-center flex-col md:flex-row gap-20 md:gap-7 z-1"
+        class="min-h-[calc(100vh-61.2px)] md:min-h-[calc(100vh-81.2px)] relative flex items-center flex-col md:flex-row md:justify-between z-1"
       >
         <!-- Content -->
-        <div class="md:w-1/2 md:text-start text-center relative">
-          <!-- Img -->
+        <div class="md:w-1/2 text-center relative py-6 pb-8 md:py-0">
+          <!-- logo -->
           <NuxtImg
-            src="/images/landing/hero.webp"
-            class="w-[50%] h-auto block absolute left-1/2 top-1/2 -translate-1/2 opacity-45 -z-1 [transform:rotateZ(30deg)]"
+            src="/images/global/logo_white.webp"
+            class="title block mx-auto w-[300px] max-w-full h-auto mb-2 md:mb-4"
           />
-
           <!-- Title -->
-          <h1
-            class="title opacity-0 mb-4 text-[30px] space md:text-[50px] font-bold tracking-widest md:tracking-[unset] md:leading-[90px] text-black"
-          >
+          <h1 class="content opacity-0 text-[20px] text-white mb-5 md:mb-10">
             نكهة الصين في قلب مصر
           </h1>
-
-          <!-- Text -->
-          <p
-            class="content mb-0 text-[16px] md:text-[20px] font-bold text-[var(--main-color-text-2)] tracking-widest md:tracking-[6px]"
-          >
-            اكتشف سحر المشروبات الصينية الأصيلة من الشاي الفاخر إلى البوبا ،
-            <br class="hidden md:block" />
-            بتجربة لا تُنسى في كل رشفة
-          </p>
+          <!-- Imgs -->
+          <div class="flex items-center justify-center gap-2 group/imgs">
+            <div
+              v-for="(img, i) in imgs"
+              :key="i"
+              class="animate-fade-in-up opacity-0 w-[60px] md:w-[80px] h-[60px] md:h-[80px] cursor-pointer flex items-center justify-center rounded-[5px] p-2 bg-[white]/25 backdrop-blur-[4px] transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1 group-hover/imgs:opacity-60 hover:opacity-100"
+              :class="{
+                '!scale-110 !-translate-y-1 !opacity-100': hoveredIndex === i,
+              }"
+              :style="{ animationDelay: `${i * 100}ms` }"
+              @mouseover="hoveredIndex = i"
+              @mouseleave="hoveredIndex = null"
+              @click="selectIndex = i"
+            >
+              <NuxtImg :src="img" class="w-auto max-w-full h-auto max-h-full" />
+            </div>
+          </div>
         </div>
 
-        <!-- Images -->
-        <div
-          class="md:-mt-[20%] mx-auto flex items-center justify-center md:w-1/2 md:text-start text-center relative"
-        >
-          <svg
-            class="absolute -z-1 top-[70%] left-1/2 -translate-1/2 w-[110%] opacity-50"
-            viewBox="-120 -120 240 240"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M 94.21088288600892,0 C 92.36994003975852,30.886822669939978 66.79281313036887,40.52304196116105 34.02462241840781,58.932374737029356 C 1.2564317064467474,77.34170751289767 -18.415119431952206,92.18669434349258 -45.228226526591335,78.33758628029068 C -72.04133362123046,64.48847821708878 -80.60559991189702,35.89739765528747 -80.07370564388636,9.806200731265278e-15 C -79.5418113758757,-35.897397655287456 -71.6188966036057,-57.37958275249236 -42.96484666271618,-74.41729735923045 C -14.310796721826652,-91.45501196596854 9.622125320203786,-89.9889780995812 41.85842176415418,-72.50091322016205 C 74.09471820810458,-55.01284834074289 96.05182573225932,-30.886822669939978 94.21088288600892,0 Z"
-              class="fill-[var(--main-color)]"
-            />
-          </svg>
-
-          <div class="relative w-[23%]">
-            <NuxtImg src="/images/landing/news1.png" class="w-full] h-auto" />
+        <!-- Slider -->
+        <div class="md:w-1/2 relative hero-animate">
+          <transition name="planet" mode="out-in">
             <NuxtImg
-              src="/images/landing/news1.png"
-              class="w-full h-auto absolute top-full left-0 transform scale-y-[-1] opacity-20 blur-xs"
+              :key="selectIndex"
+              :src="imgs[selectIndex]"
+              class="mx-auto w-[185px] md:w-[250px] max-w-full h-auto [filter:drop-shadow(0px_0_16px_hsl(0deg_0%_0%_/_38%))]"
             />
-          </div>
-          <div class="relative w-[23%]">
-            <NuxtImg src="/images/landing/news3.png" class="w-full] h-auto" />
-            <NuxtImg
-              src="/images/landing/news3.png"
-              class="w-full h-auto absolute top-full left-0 transform scale-y-[-1] opacity-20 blur-xs"
-            />
-          </div>
-          <div class="relative w-[23%]">
-            <NuxtImg src="/images/landing/news2.png" class="w-full] h-auto" />
-            <NuxtImg
-              src="/images/landing/news2.png"
-              class="w-full h-auto absolute top-full left-0 transform scale-y-[-1] opacity-20 blur-xs"
-            />
-          </div>
+          </transition>
         </div>
 
         <!-- Arrow Bottom -->
@@ -75,14 +57,14 @@
           <Icon
             icon="bytesize:chevron-bottom"
             width="45"
-            class="font-bold text-black"
+            class="font-bold text-white"
           />
         </a>
       </UiContainer>
     </div>
 
     <!-- Box Data -->
-    <UiContainer id="landing" class="mt-[-120px]">
+    <UiContainer id="landing" class="mt-[-80px]">
       <UiBoxData
         :title="dataBox.title"
         :content="dataBox.content"
@@ -96,6 +78,17 @@
 
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
+
+// Imgs
+const imgs = [
+  "/images/landing/boba_coup.png",
+  "/images/landing/news1.png",
+  "/images/landing/news2.png",
+  "/images/landing/news3.png",
+  "/images/landing/news4.png",
+];
+const hoveredIndex = ref<number | null>(null);
+const selectIndex = ref<number>(0);
 
 // Data Box
 const dataBox = {
@@ -133,7 +126,8 @@ const dataBox = {
 </script>
 
 <style scoped lang="scss">
-.title,.content {
+.title,
+.content {
   animation: fadeX 600ms ease-in-out forwards;
   transform: translateX(100px);
   opacity: 0;
@@ -147,24 +141,11 @@ const dataBox = {
   animation: upDown 4.5s ease-in-out infinite;
 }
 
-@keyframes upDown {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(20px);
-  }
+.hero-animate {
+  animation: hero-3d 1s ease-out forwards;
 }
 
-@keyframes fadeX {
-  0% {
-  transform: translateX(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
 }
 </style>

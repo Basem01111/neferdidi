@@ -3,13 +3,32 @@
 .zoom-fade-leave-active {
   transition: all 0.4s ease;
 }
+
 .zoom-fade-enter-from,
 .zoom-fade-leave-to {
   opacity: 0;
   transform: scale(0);
 }
+
 .zoom-fade-enter-to,
 .zoom-fade-leave-from {
   opacity: 1;
   transform: scale(1);
+}
+
+
+// planet
+.planet-enter-active,
+.planet-leave-active {
+  transition: all 0.35s ease;
+}
+
+.planet-enter-from {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.planet-leave-to {
+  opacity: 0;
+  transform: translateY(50px);
 }

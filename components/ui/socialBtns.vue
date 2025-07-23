@@ -5,7 +5,8 @@
             :key="i"
             :href="item.link"
             target="_blank"
-            class="btn-social z-1 overflow-hidden relative border-2 w-[35px] h-[35px] flex justify-center items-center rounded-[50%]"
+              :style="{ animationDelay: `${i * 100}ms` }"
+            class="btn-social opacity-0 z-1 overflow-hidden relative border-2 w-[35px] h-[35px] flex justify-center items-center rounded-[50%]"
           >
             <Icon :icon="item.icon" width="22" class="text-black" />
           </a>
@@ -42,6 +43,8 @@ const linksSocial = [
 
 <style scoped lang="scss">
 .btn-social {
+    animation: fade-in-up 0.5s ease-out forwards;
+
   &::before {
     content: "";
     position: absolute;
@@ -49,13 +52,14 @@ const linksSocial = [
     left: 0;
     width: 100%;
     height: 100%;
-    background: black;
+    background: var(--main-color);
     z-index: -1;
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
   }
   &:hover {
+    border-color: var(--main-color);
     & > * {
       transition: 0.5s;
       color: white;
@@ -69,21 +73,6 @@ const linksSocial = [
       height: 0;
       animation: liquidWave 0.5s ease;
     }
-  }
-}
-
-@keyframes liquidWave {
-  0% {
-    height: 10px;
-    top: -10px;
-  }
-  50% {
-    height: 15px;
-    top: -15px;
-  }
-  100% {
-    height: 0;
-    top: 0;
   }
 }
 </style>

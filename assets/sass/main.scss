@@ -3,6 +3,7 @@
 
 // Helpers
 @use './helpers/transitionVue.scss' as *;
+@use './helpers/keyframes.scss' as *;
 
 @tailwind base;
 @tailwind components;

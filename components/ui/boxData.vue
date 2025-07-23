@@ -224,7 +224,7 @@ onMounted(() => {
 .tea-card {
   $card-width: 250px;
   $card-height: 350px;
-  $tea-color: #d4a76aba;
+  $tea-color: #F4AC29;
   $milk-color: rgba(255, 255, 255, 0.9);
   $cup-rim: 20px;
   overflow: hidden;
@@ -240,7 +240,7 @@ onMounted(() => {
 
     .bubble {
       position: absolute;
-      background-color: #4e341d;
+      background-color: #692100;
       border-radius: 50%;
       animation: float 6s infinite ease-in-out;
       z-index: -1;
@@ -351,31 +351,5 @@ onMounted(() => {
   }
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0) translateX(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-20px) translateX(5px) rotate(5deg);
-  }
-  50% {
-    transform: translateY(-40px) translateX(-5px) rotate(-5deg);
-  }
-  75% {
-    transform: translateY(-30px) translateX(5px) rotate(3deg);
-  }
-}
 
-@keyframes milk-flow {
-  0% {
-    transform: translateY(0) scaleX(1);
-  }
-  50% {
-    transform: translateY(-10px) scaleX(1.05);
-  }
-  100% {
-    transform: translateY(0) scaleX(1);
-  }
-}
 </style>
